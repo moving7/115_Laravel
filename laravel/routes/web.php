@@ -32,7 +32,7 @@ route::get('/','IndexController@lar_get');
 route::get('/lar_show','IndexController@lar_get');
 //获取数据
 route::get('/get_xml','IndexController@get_xml');
-
+route::get('/get_json','IndexController@get_xml');
 //route::get('/date_add','IndexController@date_add');
 
 route::get("/test",'IndexController@index');

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 
 class IndexController extends Controller
 {
-//    header("Access-Control-Allow-Origin:*");
+//    header('Access-Control-Allow-Origin:http://115.work.com');
     public $e_put = ['code'=>404,'info'=>'Error'];
     public function index() {
         $data = ['code'=>200,'data'=>['name'=>'张三','age'=>35]];
@@ -42,6 +42,7 @@ class IndexController extends Controller
 
     /*获取日程数据*/
     public function get_xml() {
+        header("Access-Control-Allow-Origin:*");
         $res = DB::table('dateinfo')->select(['event_info','start_time','end_time'])->where('is_show',1)->get()->toarray();
 //        print_r($res);die;
         return $res;
