@@ -68,9 +68,16 @@ class IndexController extends Controller
             'end_time'=>$data['end_time'],
             'event_info'=>$data['event_info'],
             'add_time'=>time(),
+            /*审核项 默认可展示*/
+            'is_show'=>1
         ]);
-        var_dump($res);
+//        var_dump($res);
+//        if($res)
+//        $this->redirect('');
+        return redirect('/');
 }
+
+
 
     /*Html标签过滤*/
     private function chars_do($param = '') {
